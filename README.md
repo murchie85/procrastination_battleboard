@@ -26,25 +26,27 @@ This is a really simple template you can use to create your own personalized fee
 - REPLACE THE TWO XXXXX VALUES WITH TWITTER HANDLE i.e. elonmusk
 - YOU CAN CHANGE THE SIZES (data-width & data-height) AS YOU SEE FIT. 
 
- ```
+```
  <div><a class="twitter-timeline" href="https://twitter.com/XXXXX?ref_src=twsrc%5Etfw" data-width="300"
   data-height="400">Tweets by XXXXX </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 ```
 
 ### IFRAME  PANNEL   
 
-- PUT ANY URL IN THE **src=** SECTION
-  <div><iframe width="90%" height="100%" src="https://XXXX.com" frameborder="0"></iframe></div>
+- PUT ANY URL IN THE **src=** SECTION  
+
+```  <div><iframe width="90%" height="100%" src="https://XXXX.com" frameborder="0"></iframe></div> ```
 
 ### YOUTUBE  PANNEL 
 
 - ONE PER PAGE (OR IT WONT WORK)
 - PUT CHANNEL ID IN **cid** SECTION
 
+```
  <div><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <iframe class="latestVideoEmbed" vnum='0' cid="UCWN3xxRkmTPmbKwht9FuE5A" width="90%" height="100%" frameborder="0" allowfullscreen></iframe>         
 </div>
-
+```
 
 ## STILL STRUGGLING? 
 
