@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% auto 30% ;
+  grid-gap: 10px;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(100, 100, 100, 0.5);
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+
+}
+</style>
+</head>
+<body bgcolor="#000000">
+
+
+
+<div class="grid-container">
+ 
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+<div>8</div>
+<div>9</div>
+
+
+<!-- CHOSE ANY OF THE EXAMPLES BELOW AND REPLACE A GIVEN DIV ABOVE -->
+
+
+<!--                         TWITTER  PANNEL                       -->
+<!--       EMBED YOUR OWN TWEET PANEL (REPLACE THE XXXX VALUES WITH TWITTER HANDLE)    
+
+ <div><a class="twitter-timeline" href="https://twitter.com/XXXXX?ref_src=twsrc%5Etfw" data-width="300"
+  data-height="400">Tweets by XXXXX </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+-->
+
+
+
+
+<!--                         IFRAME  PANNEL                       -->
+<!--                  EMBED YOUR OWN IFRAME - PUT ANY URL IN src= section
+  <div><iframe width="90%" height="100%" src="https://XXXX.com" frameborder="0"></iframe></div>
+
+-->
+
+
+
+<!--                         YOUTUBE  PANNEL                       -->
+<!--                  ONE PER PAGE - PUT CHANNEL ID IN cid section
+
+ <div><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<iframe class="latestVideoEmbed" vnum='0' cid="UCWN3xxRkmTPmbKwht9FuE5A" width="90%" height="100%" frameborder="0" allowfullscreen></iframe>         
+</div>
+
+-->
+
+
+<div></div>
+</body>
+
+<!--  PAGINATON -->
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a class="active" href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">&raquo;</a>
+</div>
+<div></div>
+
+
+
+
+
+</html>
+
+<script>
+var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+function loadVideo(iframe){
+    $.getJSON( reqURL + iframe.getAttribute('cid'),
+      function(data) {
+         var videoNumber = (iframe.getAttribute('vnum')?Number(iframe.getAttribute('vnum')):0);
+        console.log(videoNumber);
+         var link = data.items[videoNumber].link;
+         id = link.substr(link.indexOf("=") + 1);  
+         iframe.setAttribute("src","https://youtube.com/embed/"+id + "?controls=0&autoplay=0");
+      }
+   );
+}
+var iframes = document.getElementsByClassName('latestVideoEmbed');
+for (var i = 0, len = iframes.length; i < len; i++){
+       loadVideo(iframes[i]);
+}
+</script>
+<html>

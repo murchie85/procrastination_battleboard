@@ -1,0 +1,17 @@
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#leftThing {
+  width: 25%;
+  background-color: blue;
+}
+#content {
+  width: 50%;
+  background-color: green;
+}
+#rightThing {
+  width: 25%;
+  background-color: yellow;
+}

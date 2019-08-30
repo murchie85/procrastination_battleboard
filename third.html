@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% auto 30% ;
+  grid-gap: 10px;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(100, 100, 100, 0.5);
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+
+}
+</style>
+</head>
+<body bgcolor="#000000">
+
+
+
+<div class="grid-container">
+ 
+
+<!--       GRID SPLIT    -->
+
+   <div><a class="twitter-timeline" href="https://twitter.com/TulsiGabbard?ref_src=twsrc%5Etfw" data-width="300"
+  data-height="400">Tweets by TulsiGabbard </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+  <div><iframe width="90%" height="100%" src="https://spaceflightnow.com/" frameborder="0"></iframe></div>
+
+  
+   <div><a class="twitter-timeline" href="https://twitter.com/AndrewYang?ref_src=twsrc%5Etfw" data-width="300"
+  data-height="400">Tweets by AndrewYang </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+<!--       GRID SPLIT    -->
+
+   <div><a class="twitter-timeline" href="https://twitter.com/DJSnM?ref_src=twsrc%5Etfw" data-width="300"
+  data-height="400">Tweets by DJSnM </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+ <div><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<iframe class="latestVideoEmbed" vnum='0' cid="UCh4B5ZDaLCrjaWBXPRaRT6g" width="90%" height="100%" frameborder="0" allowfullscreen></iframe>         
+</div>
+
+  <div>
+
+<iframe width="90%" height="100%" src="https://coinranking.com/" frameborder="0"></iframe>
+  </div>
+
+
+
+<!--       GRID SPLIT    -->
+
+   <div><a class="twitter-timeline" href="https://twitter.com/Mr_Russianbot?ref_src=twsrc%5Etfw" data-width="300"
+  data-height="400">Tweets by Mr_Russianbot </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+  <div><iframe width="90%" height="100%" src="https://www.sciencedaily.com/" frameborder="0"></iframe></div>
+
+  
+   <div><a class="twitter-timeline" href="https://twitter.com/thot___police?ref_src=twsrc%5Etfw" data-width="300"
+  data-height="400">Tweets by thot___police </a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+
+
+<!--       GRID SPLIT    -->
+
+
+
+<div></div>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="index.html">1</a>
+  <a href="second.html">2</a>
+  <a class="active" href="#">3</a>
+  <a href="#">&raquo;</a>
+</div>
+
+<div></div>
+
+
+</body>
+
+
+
+</html>
+
+<script>
+var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+function loadVideo(iframe){
+    $.getJSON( reqURL + iframe.getAttribute('cid'),
+      function(data) {
+         var videoNumber = (iframe.getAttribute('vnum')?Number(iframe.getAttribute('vnum')):0);
+        console.log(videoNumber);
+         var link = data.items[videoNumber].link;
+         id = link.substr(link.indexOf("=") + 1);  
+         iframe.setAttribute("src","https://youtube.com/embed/"+id + "?controls=0&autoplay=0");
+      }
+   );
+}
+var iframes = document.getElementsByClassName('latestVideoEmbed');
+for (var i = 0, len = iframes.length; i < len; i++){
+       loadVideo(iframes[i]);
+}
+</script>
+<html>
