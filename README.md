@@ -9,12 +9,12 @@ This is a really simple template you can use to create your own personalized fee
 
 ## STEPS
 
-1. Make a new directory(folder) and copy over **template.html** . *Rename file as you see fit*
+1. Make a new directory(folder) and copy over `template.html` . *Rename file as you see fit*
 2. Open up template in browser, it should look like the following : 
   
 ![sample image](images/template.png)
   
-3. Now edit the **template.html** file and you will notice a section like below: 
+3. Now edit the `template.html` file and you will notice a section like below: 
   
 ![sample image](images/div.png)
 
@@ -23,7 +23,7 @@ This is a really simple template you can use to create your own personalized fee
 ### TWITTER  PANNEL
 
 - COPY THE CODE BELOW INTO A SELECTED DIV 
-- REPLACE THE TWO XXXXX VALUES WITH TWITTER HANDLE i.e. elonmusk
+- REPLACE THE TWO **XXXXX** VALUES WITH TWITTER HANDLE i.e. elonmusk
 - YOU CAN CHANGE THE SIZES (data-width & data-height) AS YOU SEE FIT. 
 
 ```
